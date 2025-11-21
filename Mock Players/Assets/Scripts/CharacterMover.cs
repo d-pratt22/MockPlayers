@@ -1,10 +1,14 @@
 using UnityEngine;
 
-public class CharacterMover : MonoBehaviour
+public class CharacterMover : MonoBehaviour, ICharacterMover
 {
     private CharacterController characterController;
 
-    public int Health { get; internal set; }
+    [SerializeField]
+    private bool isPlayer;
+    public bool IsPlayer => isPlayer;
+
+    public int Health { get; set; }
 
     private void Awake()
     {
